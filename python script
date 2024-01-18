@@ -1,0 +1,19 @@
+import requests
+
+# Read the list of subdomains from a file named 'apple.txt'
+with open('example.txt', 'r') as file:
+    subdomain_list = file.read().splitlines()
+
+# Loop through each subdomain and check its HTTP status
+for subdomain in subdomain_list:
+    try:
+        response = requests.get(f'http://{subdomain}', timeout=5)
+        status_code = response.status_code
+
+        # Check if the status code is 200
+        if status_code == 200:
+            print(f'{subdomain} | status code: {status_code}')
+
+    except requests.RequestException as e:
+        # Ignore errors and continue to the next subdomain
+        pass
