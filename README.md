@@ -1,4 +1,4 @@
-# 200-OK-Subdomain-Checker
+# 200-Status-Subdomain-Checker
 200 OK Subdomain Checker | it will help you find working Subdomain in multiple domains
 
 its a python script !
